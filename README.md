@@ -8,5 +8,5 @@ Documentos y otras utilidades relacionadas con el canal de YouTube del Computado
 
 ## Enlaces útiles
 
-Kicad EDA : [https://www.kicad.org](https://www.kicad.org)
-Logisim Evolution HC Edition : [https://github.com/kevinawalsh/logisim-evolution](https://github.com/kevinawalsh/logisim-evolution)
+Kicad EDA : [https://www.kicad.org](https://www.kicad.org)  
+Logisim Evolution HC Edition : [https://github.com/kevinawalsh/logisim-evolution](https://github.com/kevinawalsh/logisim-evolution)  

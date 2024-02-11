@@ -1,0 +1,18 @@
+*ZETEX  BSS123 Spice Model v1.0 Last Revision 27/3/06
+    *
+    .SUBCKT BSS123/ZTX 3 4 5
+    * NODES: DRAIN GATE SOURCE
+    M1 3 2 5 5 MOD1   
+    RG 4 2 356
+    RL 3 5 1E8
+    C1 2 5 21.5P
+    C2 3 2 2.5P 
+    D1 5 3 DIODE1
+    *
+    .MODEL MOD1 NMOS VTO=1.736 RS=2.147 RD=1.682 IS=1E-15 KP=0.157
+    +CBD=25.5P PB=1
+    .MODEL DIODE1 D IS=6.12E-13 RS=.629
+    .ENDS BSS123
+    *
+    *$
+    *

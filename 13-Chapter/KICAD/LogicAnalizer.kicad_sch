@@ -4,6 +4,10 @@
 	(generator_version "8.0")
 	(uuid "84983515-f4d0-4d4d-b69e-839269d8621f")
 	(paper "A3")
+	(title_block
+		(title "\"THOR\" Digital Circuit Tester")
+		(date "2024-04-14")
+	)
 	(lib_symbols
 		(symbol "74xx:74HC138"
 			(exclude_from_sim no)

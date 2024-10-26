@@ -1,0 +1,92 @@
+
+
+Init Values
+-----------------------------------
+
+RST = 1
+CK_OEAB = 0
+SEL = 0
+CK_AB = 0
+CK_BA = 0
+SBA = 1
+
+
+Output Channel Selection
+-----------------------------------
+
+// clear output selection
+RST = 0
+RST = 1
+
+// select n output channels
+Loop n times {
+  CK_OEAB = 1
+  CK_OEAB = 0
+}
+
+
+Write data to channel c
+---------------------------
+
+OE_BA = 0  // disable data bus
+SEL = 7-c  // select port
+enable writes  // enable Arduino writes
+D = data   // write to data bus   
+CK_AB = 1  // clock the write data
+CK_AB = 0
+
+
+Read data from channel c
+------------------------
+
+OE_BA = 0   // diable data bus
+SEL = 7-c   // select port
+enable reads   // enable Arduino reads
+SBA = 1     // set latched mode
+OE_BA = 1   // enable data bus
+CK_BA = 1   // clock the read data
+CK_BA = 0
+data = D    // read from data bus
+ 
+Set Transparent mode from channel c
+------------------------
+
+OE_BA = 0   // disable data bus
+SEL = 7-c   // select port
+enable reads   // set Arduino pins to high Z
+SBA = 0     // set real time mode
+OE_BA = 1   // enable data bus
+(May be followed by data read)
+
+Read data on currently selected channel
+------------------------
+Enable reads
+OE_BA = 1   // enable data bus
+data = D
+
+Capture with external trigger
+------------------------
+set transparent mode so we see what's coming in 
+set CK_BA to high Z
+(wait for external trigger)
+(may be followed by latched data read)
+
+Read latched data on currently selected channel
+------------------------
+SBA = 1     // set latched mode
+enable reads
+OE_BA = 1   // enable data bus
+data = D
+
+
+Capture with interrupt 
+------------------------
+set transparent mode so we see what's coming in
+set CK_BA as interrupt input
+(wait for interrupt)
+data = D from interrupt
+
+
+
+
+
